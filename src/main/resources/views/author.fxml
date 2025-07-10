@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10.0" alignment="CENTER" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.avanzada.grupal.controller.AuthorController">
+
+    <padding>
+        <Insets top="20" right="30" bottom="20" left="30"/>
+    </padding>
+
+    <Label text="Gestión de Authores" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+    
+    <Label text="Nombre:"/>
+    <TextField fx:id="txtNombre" promptText="Ingrese nombre del autor"/>
+
+    <Label text="Versión:"/>
+    <TextField fx:id="txtVersion" promptText="Ingrese versión del autor"/>
+
+    <Button fx:id="btnGuardar" text="Guardar Autor" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+
+</VBox>

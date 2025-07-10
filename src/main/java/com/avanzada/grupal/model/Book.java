@@ -1,5 +1,7 @@
 package com.avanzada.grupal.model;
 
+import java.math.BigDecimal;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
@@ -12,12 +14,13 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table("author")
-public class Author {
+@Table("book")
+public class Book {
 
     @Id
-    private Long id; // Cambiar a Long para permitir null
-    private String name;
+    private long isbn;
+    private String title;
+    private BigDecimal price;
     private int version;
 
 }
