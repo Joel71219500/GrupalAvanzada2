@@ -1,6 +1,8 @@
 plugins {
     id("java")
     id("application")
+    id("io.freefair.lombok") version "8.14"
+    id("org.openjfx.javafxplugin") version "0.1.0"
 }
 
 group = "com.avanzada2.practicaCDI"
@@ -23,11 +25,26 @@ dependencies {
     // JAVAFX
     implementation ("org.openjfx:javafx-controls:21")
     implementation ("org.openjfx:javafx-fxml:21")
+    implementation ("org.openjfx:javafx-base:21")
 
 }
 
+// Configuración de JavaFX
+javafx {
+    version = "21"
+    modules = listOf("javafx.controls", "javafx.fxml")
+}
+
 application {
-    mainClass.set("com.tuempresa.springfxapp.MainApp")
+    mainClass.set("com.avanzada.grupal.Main")
+}
+
+// Configuración de tareas de ejecución
+tasks.named<JavaExec>("run") {
+    jvmArgs = listOf(
+        "--add-modules", "javafx.controls,javafx.fxml",
+        "--add-exports", "javafx.graphics/com.sun.javafx.application=ALL-UNNAMED"
+    )
 }
 
 

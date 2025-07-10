@@ -1,21 +1,79 @@
-# Grupal avanzada 2
+# 📚 Proyecto Grupal Avanzada 2 - Online Bookstore
 
-Breve descripción del proyecto. Explica de manera concisa qué hace el proyecto y cuál es su propósito.
+Sistema de gestión de librería online desarrollado con **Spring Framework**, **JavaFX** y **PostgreSQL**.
 
-## Requisitos Previos
+## 🚀 Tecnologías Utilizadas
 
-Antes de comenzar, asegúrate de tener instalado lo siguiente en tu sistema:
+- **Java 21** - Lenguaje de programación principal
+- **Spring Framework 6.1.5** - Framework de backend
+- **Spring Data JDBC 3.2.5** - Acceso a datos
+- **JavaFX 21** - Interfaz gráfica de usuario
+- **PostgreSQL** - Base de datos
+- **Gradle** - Herramienta de construcción
+- **Lombok** - Reducción de código boilerplate
 
-- [Git](https://git-scm.com/)
-- [Otras dependencias...] (por ejemplo, Node.js, Python, Docker, etc.)
 
-## Clonar el Repositorio
 
-Sigue estos pasos para clonar el repositorio en tu máquina local:
-
-1. Abre tu terminal o línea de comandos.
-2. Navega al directorio donde deseas clonar el proyecto.
-3. Ejecuta el siguiente comando:
-
+### Verificar Instalación:
 ```bash
-git clone https://github.com/tu-usuario/nombre-del-repo.git
+java -version  # Debe mostrar Java 21+
+psql --version # Verificar PostgreSQL
+```
+
+## ⚙️ Configuración del Proyecto
+
+### 1. Configuración de Base de Datos
+es la base de datos author books de clases
+
+
+## 🏃‍♂️ Instrucciones de Ejecución
+
+### Opción 1: Usando Gradle (Recomendado)
+```bash
+# Windows
+gradlew.bat run
+
+# Linux/Mac
+./gradlew run
+```
+
+
+## 🎨 Guía para Desarrollo Frontend con JavaFX
+
+### 📐 Scene Builder - Herramienta Recomendada
+
+**Descargar Scene Builder:**
+- [Gluon Scene Builder](https://gluonhq.com/products/scene-builder/) (Gratis)
+- Integración perfecta con JavaFX y FXML
+
+### 🏗️ Estructura de Archivos FXML
+
+**Ubicación:** `src/main/resources/views/`
+
+
+
+### Problemas Comunes:
+
+1. **Error de conexión a BD:**
+   - Verificar que PostgreSQL esté ejecutándose
+   - Revisar credenciales en `application.properties`
+
+2. **JavaFX no carga:**
+   - Verificar que los módulos JavaFX estén en el classpath
+   - Revisar la configuración en `build.gradle.kts`
+
+3. **Scene Builder no abre FXML:**
+   - Verificar que el archivo FXML esté bien formado
+   - Comprobar que el controlador existe
+
+
+## 📝 Notas Adicionales
+
+- Mantener separación entre lógica de negocio (Service) y UI (Controller)
+- Usar inyección de dependencias de Spring en los controladores
+- Validar datos en el frontend antes de enviar al backend
+- Implementar manejo de errores en la UI
+- Considerar internacionalización (i18n) para textos
+
+
+¡Happy Coding! 🚀 Si tienes problemas, revisa este README primero, luego busca ayuda del equipo.
