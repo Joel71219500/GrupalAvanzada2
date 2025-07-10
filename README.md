@@ -1,4 +1,4 @@
-# Nombre del Proyecto
+# Grupal avanzada 2
 
 Breve descripción del proyecto. Explica de manera concisa qué hace el proyecto y cuál es su propósito.
 
