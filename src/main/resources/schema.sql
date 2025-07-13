@@ -7,8 +7,3 @@ CREATE TABLE author (
     version INTEGER NOT NULL
 );
 
--- Datos de ejemplo (opcional)
-INSERT INTO author (name, version) VALUES 
-('Gabriel García Márquez', 1),
-('Isabel Allende', 1),
-('Mario Vargas Llosa', 1);

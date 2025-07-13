@@ -1,7 +1,5 @@
 package com.avanzada.grupal.model;
 
-import java.math.BigDecimal;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
@@ -11,19 +9,14 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
-@Table("book")
-public class Book {
+@Table("inventory")
+public class Inventory {
+    @Id
+    private String bookIsbn;
+    private Integer supplied;
+    private Integer sold;
 
-    @Id // Cambiar de String isbn a Long id
-    private String isbn;
-    private String title;
-    private BigDecimal price;
-    private int version;
-
-    
- 
-    
 }

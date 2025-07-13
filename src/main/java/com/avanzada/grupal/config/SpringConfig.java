@@ -11,6 +11,8 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.data.relational.core.dialect.Dialect;
+import org.springframework.data.relational.core.dialect.PostgresDialect;
 
 import javax.sql.DataSource;
 
@@ -42,5 +44,10 @@ public class SpringConfig extends AbstractJdbcConfiguration {
     @Bean
     public NamedParameterJdbcTemplate namedParameterJdbcTemplate(DataSource dataSource) {
         return new NamedParameterJdbcTemplate(dataSource);
+    }
+    
+    @Bean
+    public Dialect jdbcDialect() {
+        return PostgresDialect.INSTANCE;
     }
 }

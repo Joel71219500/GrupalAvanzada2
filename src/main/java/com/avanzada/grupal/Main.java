@@ -10,8 +10,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application{
-    private AnnotationConfigApplicationContext context;
     
+    private AnnotationConfigApplicationContext context;
     @Override
     public void init() {
         context = new AnnotationConfigApplicationContext(SpringConfig.class);

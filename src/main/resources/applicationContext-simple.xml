@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:jdbc="http://www.springframework.org/schema/data/jdbc"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context 
+           http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx.xsd
+           http://www.springframework.org/schema/data/jdbc
+           http://www.springframework.org/schema/data/jdbc/spring-data-jdbc.xsd">
+
+    <!-- Habilitar el escaneo de componentes -->
+    <context:component-scan base-package="com.avanzada.grupal" />
+    
+    <!-- Configuración de la fuente de datos -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.postgresql.Driver" />
+        <property name="url" value="jdbc:postgresql://localhost:5432/Online_Bookstore" />
+        <property name="username" value="DBA3" />
+        <property name="password" value="71219500" />
+    </bean>
+    
+    <!-- JdbcTemplate para operaciones de base de datos -->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <!-- NamedParameterJdbcTemplate para Spring Data JDBC -->
+    <bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+        <property name="jdbcTemplate" ref="jdbcTemplate" />
+    </bean>
+    
+    <!-- Dialect para PostgreSQL -->
+    <bean id="jdbcDialect" class="org.springframework.data.relational.core.dialect.PostgresDialect" factory-method="getInstance" />
+    
+    <!-- Transaction Manager -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <!-- Habilitar transacciones -->
+    <tx:annotation-driven transaction-manager="transactionManager" />
+    
+    <!-- Habilitar repositorios JDBC -->
+    <jdbc:repositories base-package="com.avanzada.grupal.repository" />
+    
+</beans>

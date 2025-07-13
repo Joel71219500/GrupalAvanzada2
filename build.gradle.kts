@@ -3,6 +3,7 @@ plugins {
     id("application")
     id("io.freefair.lombok") version "8.14"
     id("org.openjfx.javafxplugin") version "0.1.0"
+
 }
 
 group = "com.avanzada2.practicaCDI"
@@ -23,10 +24,18 @@ dependencies {
     implementation ("org.springframework:spring-aop:6.1.5")
     implementation ("org.springframework:spring-expression:6.1.5")
     
-    // SPRING DATA
+
+    // SPRING DATA (JDBC + JPA)
     implementation ("org.springframework.data:spring-data-jdbc:3.2.5")
     implementation ("org.springframework:spring-jdbc:6.1.6")
+    implementation("org.springframework.data:spring-data-jpa:3.2.5")
     implementation ("org.springframework:spring-tx:6.1.6")
+    implementation("org.springframework:spring-orm:6.1.6")
+    
+
+    
+    // CONNECTION POOLING
+    implementation("com.zaxxer:HikariCP:5.0.1")
     
     // LOGGING (para mejor debugging)
     implementation ("org.slf4j:slf4j-api:2.0.9")
@@ -53,7 +62,7 @@ javafx {
     version = "21"
     modules = listOf("javafx.controls", "javafx.fxml")
 }
-
+//aqui cambias si quieres ejecutar main o testServicios con ./gradlew run
 application {
     mainClass.set("com.avanzada.grupal.Main")
 }
