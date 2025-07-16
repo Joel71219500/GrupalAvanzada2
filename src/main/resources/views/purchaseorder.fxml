@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" spacing="15.0"
+      prefHeight="600.0" prefWidth="700.0"
+      xmlns="http://javafx.com/javafx/24.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.avanzada.grupal.controller.PurchaseOrderController"
+      stylesheets="@css/purchaseorders.css"
+      styleClass="root-container">
+
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <Label text="Gestión de Órdenes de Compra" styleClass="title-label" />
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtId" promptText="ID de orden" prefWidth="80" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Cliente ID:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <TextField fx:id="txtCustomerId" promptText="ID de cliente" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+        <Label text="Total:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtTotal" promptText="Total" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Estado:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <ComboBox fx:id="cbStatus" prefWidth="120" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+    </GridPane>
+
+    <HBox spacing="15" alignment="CENTER">
+        <Button fx:id="btnGuardar" text="Guardar" styleClass="btn-primary"/>
+        <Button fx:id="btnBuscarId" text="Buscar por ID" styleClass="btn-secondary"/>
+        <Button fx:id="btnActualizarEstado" text="Actualizar Estado" styleClass="btn-warning"/>
+        <Button fx:id="btnListarTodo" text="Listar todo" styleClass="btn-purple"/>
+        <Button fx:id="btnEliminar" text="Eliminar" styleClass="btn-danger"/>
+    </HBox>
+
+    <TableView fx:id="tableOrders" prefHeight="400.0" styleClass="table-view">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colCustomerId" text="Cliente ID" prefWidth="80"/>
+            <TableColumn fx:id="colPlacedOn" text="Fecha Pedido" prefWidth="150"/>
+            <TableColumn fx:id="colDeliveredOn" text="Fecha Entrega" prefWidth="150"/>
+            <TableColumn fx:id="colStatus" text="Estado" prefWidth="80"/>
+            <TableColumn fx:id="colTotal" text="Total" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>
+
+
+

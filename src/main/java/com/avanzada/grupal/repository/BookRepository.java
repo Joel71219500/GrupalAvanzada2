@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.avanzada.grupal.model.Book;
 @Repository
-public interface BookRepository extends CrudRepository<Book, Long> {
+public interface BookRepository extends CrudRepository<Book, String> {
     
     
     List<Book> findByTitle(String title);

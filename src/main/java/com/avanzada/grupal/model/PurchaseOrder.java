@@ -16,13 +16,13 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table("purchaseorder")
+@Table("purchase_orders")
 public class PurchaseOrder {
     @Id
     private Long id;
     private Long customer_id;
-    private LocalDateTime placedon;
-    private LocalDateTime deliveredon;
+    private LocalDateTime placed_on;
+    private LocalDateTime delivered_on;
     private Integer status;            //status finalizdo o pendiente o cancelado con numeros 0,1,2
     private BigDecimal total;
 }

@@ -81,7 +81,7 @@ public class TestServicios {
 System.out.println("-----------------------Probando PurchaseOrderService...");
         System.out.println("listando ordenes de compra:");
     purchaseOrderService.encontrarTodos().forEach(po -> {
-            System.out.println("Orden de compra ID: " + po.getId() + ", Fecha llegada al almacen: " + po.getPlacedon());
+            System.out.println("Orden de compra ID: " + po.getId() + ", Fecha llegada al almacen: " + po.getPlaced_on());
         });
 
      

@@ -19,11 +19,11 @@ public class Main extends Application{
     
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/author.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/main.fxml"));
         loader.setControllerFactory(context::getBean);
         Scene scene = new Scene(loader.load());
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Cliente de Autores");
+        primaryStage.setTitle("Menu Principal");
         primaryStage.show();
     }
     

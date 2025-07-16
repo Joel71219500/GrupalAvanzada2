@@ -12,7 +12,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 
-@Table("customer")
+@Table("customers")
 public class Customer {
     @Id
     private Long id;

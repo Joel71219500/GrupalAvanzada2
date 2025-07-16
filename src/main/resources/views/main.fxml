@@ -1,10 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<VBox spacing="10.0" alignment="CENTER" xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.avanzada.grupal.controller.MainController">
-    <Label fx:id="label" text="Cargando..." />
-</VBox>
+<BorderPane xmlns="http://javafx.com/javafx/24.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.avanzada.grupal.controller.MainController"
+            stylesheets="@css/main.css"
+            prefWidth="900" prefHeight="700"
+            styleClass="root-container">
+
+    <top>
+        <HBox styleClass="header" alignment="CENTER_LEFT" spacing="10">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+            <Label text="📚 Gestión Librería" styleClass="header-title"/>
+        </HBox>
+    </top>
+
+    <center>
+        <TabPane fx:id="tabPane" styleClass="tab-pane" tabClosingPolicy="UNAVAILABLE">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Tab text="Autores">
+                <fx:include source="author.fxml"/>
+            </Tab>
+            <Tab text="Libros">
+                <fx:include source="book.fxml"/>
+            </Tab>
+            <Tab text="Clientes">
+                <fx:include source="customer.fxml"/>
+            </Tab>
+            <Tab text="Órdenes">
+                <fx:include source="purchaseorder.fxml"/>
+            </Tab>
+        </TabPane>
+    </center>
+
+    <bottom>
+        <HBox styleClass="footer" alignment="CENTER_RIGHT">
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+            <Label fx:id="statusLabel" text="Listo" />
+        </HBox>
+    </bottom>
+
+</BorderPane>
